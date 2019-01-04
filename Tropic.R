@@ -3,7 +3,7 @@ Tropic <- read.csv("tropic.csv", header = TRUE)
 
 #prices ending in 9
 
-Tropic$end9 <- ifelse((Tropic$Price * 100) %% 10 == 9, 1, 0)
+Tropic$end9 <- ifelse((Tropic$Price * 10*10) %% 10 == 9, 1, 0)
 
 #dividing the weeks into quarters
 
