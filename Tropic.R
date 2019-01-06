@@ -21,8 +21,7 @@ summary(RegCoeff)
 
 #creating lag sales variable
 
-Tropic2 <- Tropic %>% group_by(Store) %>% mutate(LagQuant = lag(Quant)) %>% 
-           select(-"LagQrt")
+Tropic2 <- Tropic %>% group_by(Store) %>% mutate(LagQuant = lag(Quant))
 
 RegCoeff2 <- lm(log(Quant) ~ Price + as.factor(Quarter) + as.factor(Deal) + as.factor(Store) 
                + as.factor(end9) + Week + LagQuant, data = Tropic2)
